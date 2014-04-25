@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="TestApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    </head>
+    <body ng-controller="TestCtrl">
+        <div class="container">
+            <p cs-text-truncate
+               cs-truncate="longText"
+               cs-truncate-threshold="40"></p>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="ng-text-truncate.js"></script>
+        
+        <script type="text/javascript">
+            var testApp = angular.module( "TestApp", [ "ngTextTruncate" ] );
+            
+            testApp.controller( "TestCtrl", function( $scope ) {
+                $scope.longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper augue vel scelerisque egestas. Praesent odio lacus, porta vitae nisl a, semper tempor elit. Etiam fringilla ut nisl non dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis eros euismod, elementum tortor ut, sagittis felis. Nulla lectus ante, eleifend non felis pharetra, porta aliquet urna. Curabitur nec elit sit amet tortor accumsan volutpat sed vitae ante. Cras semper consequat nunc, in tincidunt dolor scelerisque eget. Morbi volutpat quis est bibendum aliquet. Sed euismod neque nisl, congue fermentum eros sagittis sit amet. Nulla at tincidunt nibh.";
+            } );
+        </script>
+    </body>
+</html>
