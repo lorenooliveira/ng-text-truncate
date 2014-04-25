@@ -5,6 +5,8 @@ This is a simple, but fully functional, directive for truncating text in [angula
 
 If you are using *ng-text-truncate* in a project that already uses [Twitter Boostrap](http://getbootstrap.com/), then the toggling elements (i.e. textual links with the texts "More" and "Less") shall inherit Bootstrap's styles for textual links. If you are not using Twitter Boostrap or if you want to customize some aspect of the toggling elements, then you can write your own CSS for the class *csTruncateToggleText*.
 
+[DEMO](https://rawgit.com/lorenooliveira/ng-text-truncate/master/index.html)
+
 Usage Instructions
 ==================
 
