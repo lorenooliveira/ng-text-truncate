@@ -21,14 +21,21 @@ Usage Instructions
 
 As usual, include this file after the inclusion of the *angular.min.js* file.
 
-2. Assign a text to some variable
+2. Import *ng-text-truncate* in your app
+--------------------------------------
+
+```javascript
+angular.module( "TestApp", [ "ngTextTruncate" ] );
+```
+
+3. Assign a text to some variable
 ---------------------------------
 
 ```javascript
 $scope.longText = "Lorem ipsum dolor sit amet, and a possibly long remaining text.";
 ```
 
-3. Apply the directive to the element where you intend to put your text
+4. Apply the directive to the element where you intend to put your text
 -----------------------------------------------------------------------
 
 Use the *cs-truncate* attribute to pass the variable holding your text. In the *cs-truncate-threshould* attribute you should indicate the maximum number of chars to be displayed before truncation. That is, any string bigger than *cs-truncate-threshould* will be truncated.
@@ -39,7 +46,12 @@ Use the *cs-truncate* attribute to pass the variable holding your text. In the *
    cs-truncate-threshold="40"></p>
 ```
 
-4. And...... that's all folks
--------------------
+5. And...... that's all folks
+-----------------------------
 
 Now open your HTML and everything should be working as intended.
+
+Future Improvements
+===================
+
+Get in touch if you have ideas for improvements. Bug reports and pull requests are welcome.
