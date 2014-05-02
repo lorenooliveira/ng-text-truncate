@@ -5,15 +5,99 @@
         <title>Document</title>
         
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <style>
+            li.L0, li.L1, li.L2, li.L3,
+            li.L5, li.L6, li.L7, li.L8
+            { list-style-type: decimal !important }
+        </style>
     </head>
     <body ng-controller="TestCtrl">
         <div class="container">
+            <p>
+                <h3>Original text</h3>
+                
+<pre class="prettyprint language-javascript linenums">$scope.longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper augue vel scelerisque egestas. Praesent odio lacus, porta vitae nisl a, semper tempor elit. Etiam fringilla ut nisl non dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis eros euismod, elementum tortor ut, sagittis felis. Nulla lectus ante, eleifend non felis pharetra, porta aliquet urna. Curabitur nec elit sit amet tortor accumsan volutpat sed vitae ante. Cras semper consequat nunc, in tincidunt dolor scelerisque eget. Morbi volutpat quis est bibendum aliquet. Sed euismod neque nisl, congue fermentum eros sagittis sit amet. Nulla at tincidunt nibh.";</pre>
+            </p>
+            
+            <p>
+                <h3>Char-based truncation</h3>
+                
+                <p>Use the <code>ng-text-truncate</code> directive along with the <code>ng-tt-chars-threshould</code> attribute for truncating your text according to the number of chars in the string.</p>
+                
+                <p>So, this block...</p>
+<pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
+   ng-tt-chars-threshold="40"&gt;&lt;/p&gt;</pre>
+            
+                <p>...produces this:</p>
+                
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p ng-text-truncate="longText"
+                           ng-tt-chars-threshold="40"></p>
+                    </div>
+                </div>
+            </p>
+            
+            <p>
+                <h3>Word-based truncation</h3>
+                
+                <p>Similarly the last example, use the <code>ng-text-truncate</code> directive along with the <code>ng-tt-words-threshould</code> attribute for truncating your text based on the number of words in the string.</p>
+                <p>So, this block...</p>
+<pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
+   ng-tt-words-threshold="15"&gt;&lt;/p&gt;</pre>
+            
+                <p>...produces this:</p>
+                
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p ng-text-truncate="longText"
+                           ng-tt-words-threshold="15"></p>
+                    </div>
+                </div>
+            </p>
+            
+            <p>
+                <h3>Custom CSS</h3>
+                
+                <p>The styles defined in the ngTruncateToggleText class are applied to both toggling elements.</p>
+<pre class="prettyprint language-css linenums">.ngTruncateToggleText {
+    color: red,
+    margin: 1px
+}</pre>
+            </p>
+            
+            <p>
+                <h3>Custom toggling elements</h3>
+                
+                <p>You can set your own labels for the toggling elements.</p>
+<pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
+   ng-tt-chars-threshold="40"
+   ng-tt-more-label="Show"
+   ng-tt-less-label="Hide"&gt;&lt;/p&gt;</pre>
+            </p>
+            
+            <p>
+                <h3>Text truncation without toggling</h3>
+                
+                <p>You can also truncate the text and ommit the toggling elements addind the attribute ng-tt-no-toggling</p>
+<pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
+   ng-tt-chars-threshold="40"
+   ng-tt-no-toggling&gt;&lt;/p&gt;</pre>
+            <p>Or...</p>
+<pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
+   ng-tt-words-threshold="15"
+   ng-tt-no-toggling&gt;&lt;/p&gt;</pre>
+            </p>
+            
+<!--
             <p cs-text-truncate
                cs-truncate="longText"
                cs-truncate-threshold="40"></p>
+-->
         </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
         <script src="ng-text-truncate.js"></script>
         
         <script type="text/javascript">
