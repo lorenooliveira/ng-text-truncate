@@ -65,8 +65,6 @@ By using this directive you can:
 * Take a ride in Bootstrap's styles for the toggling elements;
 * Customize the appearance of the toggling elements by means of a custom CSS class (for the case you don't like Bootstrap's defaults or if you are not using Bootstrap).
 
-Good question. Take a look at our two demos for a complete list of features and live examples of how to use each of them.
-
 7. Nice. And how to use them?
 -----------------------------
 
