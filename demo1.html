@@ -57,43 +57,41 @@
             </p>
             
             <p>
-                <h3>Custom CSS</h3>
-                
-                <p>The styles defined in the ngTruncateToggleText class are applied to both toggling elements.</p>
-<pre class="prettyprint language-css linenums">.ngTruncateToggleText {
-    color: red,
-    margin: 1px
-}</pre>
-            </p>
-            
-            <p>
                 <h3>Custom toggling elements</h3>
                 
-                <p>You can set your own labels for the toggling elements.</p>
+                <p>You can set your own labels for the toggling elements using the <code>ng-tt-more-label</code> and <code>ng-tt-less-label</code> attributes.</p>
 <pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
    ng-tt-chars-threshold="40"
    ng-tt-more-label="Show"
    ng-tt-less-label="Hide"&gt;&lt;/p&gt;</pre>
+            
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p ng-text-truncate="longText"
+                           ng-tt-chars-threshold="40"
+                           ng-tt-more-label="Show"
+                           ng-tt-less-label="Hide"></p>
+                    </div>
+                </div>
             </p>
             
             <p>
                 <h3>Text truncation without toggling</h3>
                 
-                <p>You can also truncate the text and ommit the toggling elements addind the attribute ng-tt-no-toggling</p>
-<pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
-   ng-tt-chars-threshold="40"
-   ng-tt-no-toggling&gt;&lt;/p&gt;</pre>
-            <p>Or...</p>
+                <p>You can also truncate the text and ommit the toggling elements by addind the attribute <code>ng-tt-no-toggling</code>.</p>
 <pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
    ng-tt-words-threshold="15"
    ng-tt-no-toggling&gt;&lt;/p&gt;</pre>
-            </p>
             
-<!--
-            <p cs-text-truncate
-               cs-truncate="longText"
-               cs-truncate-threshold="40"></p>
--->
+                <p>The previous statement produces this:</p>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p ng-text-truncate="longText"
+                           ng-tt-words-threshold="15"
+                           ng-tt-no-toggling></p>
+                    </div>
+                </div>
+            </p>
         </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" ng-app="TestApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <style>
+            li.L0, li.L1, li.L2, li.L3,
+            li.L5, li.L6, li.L7, li.L8
+            { list-style-type: decimal !important }
+            
+            .ngTruncateToggleText {
+                color: red;
+                font-size: 90%;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body ng-controller="TestCtrl">
+        <div class="container">
+            <p>
+                <h3>Original text</h3>
+                
+<pre class="prettyprint language-javascript linenums">$scope.longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper augue vel scelerisque egestas. Praesent odio lacus, porta vitae nisl a, semper tempor elit. Etiam fringilla ut nisl non dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis eros euismod, elementum tortor ut, sagittis felis. Nulla lectus ante, eleifend non felis pharetra, porta aliquet urna. Curabitur nec elit sit amet tortor accumsan volutpat sed vitae ante. Cras semper consequat nunc, in tincidunt dolor scelerisque eget. Morbi volutpat quis est bibendum aliquet. Sed euismod neque nisl, congue fermentum eros sagittis sit amet. Nulla at tincidunt nibh.";</pre>
+            </p>
+            
+            <p>
+                <h3>Custom CSS</h3>
+                
+                <p>The styles defined in the <code>ngTruncateToggleText</code> class are applied to both toggling elements.</p>
+<pre class="prettyprint language-css linenums">.ngTruncateToggleText {
+    color: red;
+    font-size: 90%;
+    font-style: italic;
+}</pre>
+            
+                <p>So, the previous definitions along with de following statement...</p>
+                
+<pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
+   ng-tt-chars-threshold="40"&gt;&lt;/p&gt;</pre>
+            
+                <p>...produces this:</p>
+                
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p ng-text-truncate="longText"
+                           ng-tt-chars-threshold="40"></p>
+                    </div>
+                </div>
+            </p>            
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+        <script src="ng-text-truncate.js"></script>
+        
+        <script type="text/javascript">
+            var testApp = angular.module( "TestApp", [ "ngTextTruncate" ] );
+            
+            testApp.controller( "TestCtrl", function( $scope ) {
+                $scope.longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper augue vel scelerisque egestas. Praesent odio lacus, porta vitae nisl a, semper tempor elit. Etiam fringilla ut nisl non dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis eros euismod, elementum tortor ut, sagittis felis. Nulla lectus ante, eleifend non felis pharetra, porta aliquet urna. Curabitur nec elit sit amet tortor accumsan volutpat sed vitae ante. Cras semper consequat nunc, in tincidunt dolor scelerisque eget. Morbi volutpat quis est bibendum aliquet. Sed euismod neque nisl, congue fermentum eros sagittis sit amet. Nulla at tincidunt nibh.";
+            } );
+        </script>
+    </body>
+</html>
