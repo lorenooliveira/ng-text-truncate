@@ -116,13 +116,13 @@ angular.module( 'ngTextTruncate', [] )
                                                 "<span class='btn-link ngTruncateToggleText' " +
                                                     "ng-click='toggleShow()'" +
                                                     "ng-show='!open'>" +
-                                                    " More" +
+                                                    " " + ($scope.customMoreLabel ? $scope.customMoreLabel : "More") +
                                                 "</span>" +
                                                 "<span ng-show='open'>" + 
                                                     splitText.slice( threshould, splitText.length ).join( " " ) + 
                                                     "<span class='btn-link ngTruncateToggleText'" +
                                                           "ng-click='toggleShow()'>" +
-                                                        " Less" +
+                                                        " " + ($scope.customLessLabel ? $scope.customLessLabel : "Less") +
                                                     "</span>" +
                                                 "</span>" +
                                             "</span>" );
