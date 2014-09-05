@@ -29,23 +29,21 @@ angular.module( 'ngTextTruncate', [] )
             var CHARS_THRESHOLD = parseInt( $scope.charsThreshould );
             var WORDS_THRESHOLD = parseInt( $scope.wordsThreshould );
             
-            if( CHARS_THRESHOLD ) {
-                if( $scope.text && CharBasedTruncation.truncationApplies( $scope, CHARS_THRESHOLD ) ) {
-                    CharBasedTruncation.applyTruncation( CHARS_THRESHOLD, $scope, $element );
-                    
+            $scope.$watch('text', function() {
+                if( CHARS_THRESHOLD ) {
+                    if( $scope.text && CharBasedTruncation.truncationApplies( $scope, CHARS_THRESHOLD ) ) {
+                        CharBasedTruncation.applyTruncation( CHARS_THRESHOLD, $scope, $element );
+                    } else {
+                        $element.append( $scope.text );
+                    }
                 } else {
-                    $element.append( $scope.text );
+                    if( $scope.text && WordBasedTruncation.truncationApplies( $scope, WORDS_THRESHOLD ) ) {
+                        WordBasedTruncation.applyTruncation( WORDS_THRESHOLD, $scope, $element );   
+                    } else {
+                        $element.append( $scope.text );
+                    }
                 }
-                
-            } else {
-                if( $scope.text && WordBasedTruncation.truncationApplies( $scope, WORDS_THRESHOLD ) ) {
-                    WordBasedTruncation.applyTruncation( WORDS_THRESHOLD, $scope, $element );
-                    
-                } else {
-                    $element.append( $scope.text );
-                }
-                
-            }
+            });
         }
     };
 } )
