@@ -5,7 +5,8 @@
     angular.module( 'ngTextTruncate', [] )
 
 
-    .directive( "ngTextTruncate", function( $compile, ValidationServices, CharBasedTruncation, WordBasedTruncation ) {
+    .directive( "ngTextTruncate", [ "$compile", "ValidationServices", "CharBasedTruncation", "WordBasedTruncation",
+    	function( $compile, ValidationServices, CharBasedTruncation, WordBasedTruncation ) {
         return {
             restrict: "A",
             scope: {
@@ -54,7 +55,7 @@
                 } );
             }
         };
-    } )
+    }] )
 
 
 
@@ -70,7 +71,7 @@
 
 
 
-    .factory( "CharBasedTruncation", function( $compile ) {
+    .factory( "CharBasedTruncation", [ "$compile", function( $compile ) {
         return {
             truncationApplies: function( $scope, threshould ) {
                 return $scope.text.length > threshould;
@@ -103,11 +104,11 @@
                 }
             }
         };
-    })
+    }])
 
 
 
-    .factory( "WordBasedTruncation", function( $compile ) {
+    .factory( "WordBasedTruncation", [ "$compile", function( $compile ) {
         return {
             truncationApplies: function( $scope, threshould ) {
                 return $scope.text.split( " " ).length > threshould;
@@ -140,6 +141,6 @@
                 }
             }
         };
-    });
+    }]);
     
 }());
