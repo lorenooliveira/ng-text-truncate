@@ -39,7 +39,10 @@
                                 CharBasedTruncation.applyTruncation( CHARS_THRESHOLD, $scope, $element );
 
                             } else {
-                                $element.append( $scope.text );
+                                // Since appending raw text to an element causes the browser to pass that text through the
+                                // JS Parser, we're globally replacing "<" with "&lt;" in order to prevent execution of 
+                                // text like "<script>window.alert('foo');</script>".
+                                $element.append( $scope.text.replace(/</g, "&lt;") );
                             }
 
                     } else {
@@ -48,7 +51,10 @@
                             WordBasedTruncation.applyTruncation( WORDS_THRESHOLD, $scope, $element );
 
                         } else {
-                            $element.append( $scope.text );
+                            // Since appending raw text to an element causes the browser to pass that text through the
+                            // JS Parser, we're globally replacing "<" with "&lt;" in order to prevent execution of 
+                            // text like "<script>window.alert('foo');</script>".
+                            $element.append( $scope.text.replace(/</g, "&lt;") );
                         }
 
                     }
