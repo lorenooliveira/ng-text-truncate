@@ -81,7 +81,7 @@
                 if( $scope.useToggling ) {
                     var el = angular.element(    "<span>" + 
                                                     $scope.text.substr( 0, threshould ) + 
-                                                    "<span ng-show='!open'>...</span>" +
+                                                    "<span ng-show='!open'>&hellip;</span>" +
                                                     "<span class='btn-link ngTruncateToggleText' " +
                                                         "ng-click='toggleShow()'" +
                                                         "ng-show='!open'>" +
@@ -99,7 +99,7 @@
                     $element.append( el );
 
                 } else {
-                    $element.append( $scope.text.substr( 0, threshould ) + "..." );
+                    $element.append( $scope.text.substr( 0, threshould ) + "&hellip;" );
 
                 }
             }
@@ -119,7 +119,7 @@
                 if( $scope.useToggling ) {
                     var el = angular.element(    "<span>" + 
                                                     splitText.slice( 0, threshould ).join( " " ) + " " + 
-                                                    "<span ng-show='!open'>...</span>" +
+                                                    "<span ng-show='!open'>&hellip;</span>" +
                                                     "<span class='btn-link ngTruncateToggleText' " +
                                                         "ng-click='toggleShow()'" +
                                                         "ng-show='!open'>" +
@@ -137,7 +137,7 @@
                     $element.append( el );
 
                 } else {
-                    $element.append( splitText.slice( 0, threshould ).join( " " ) + "..." );
+                    $element.append( splitText.slice( 0, threshould ).join( " " ) + "&hellip;" );
                 }
             }
         };
