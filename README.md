@@ -40,7 +40,7 @@ $scope.longText = "Lorem ipsum dolor sit amet, and a possibly long remaining tex
 4. Apply the directive to the element where you intend to put your text
 -----------------------------------------------------------------------
 
-Use the *cs-truncate* attribute to pass the variable holding your text. In the *cs-truncate-threshould* attribute you should indicate the maximum number of chars to be displayed before truncation. That is, any string bigger than *cs-truncate-threshould* will be truncated.
+Use the *ng-text-truncate* attribute to pass the variable holding your text. In the *ng-tt-chars-threshold* attribute you should indicate the maximum number of chars to be displayed before truncation. That is, any string bigger than *ng-tt-chars-threshold* will be truncated.
 
 ```html
 <p ng-text-truncate="longText"
@@ -63,9 +63,13 @@ By using this directive you can:
 * Customize the text of the toggling elements (the defaults are "More" and "Less");
 * If you want/need, you can just truncate the text (i.e., ommit the toggling elements);
 * Take a ride in Bootstrap's styles for the toggling elements;
+
+7. Planned Additions
+--------------------
+
 * Customize the appearance of the toggling elements by means of a custom CSS class (for the case you don't like Bootstrap's defaults or if you are not using Bootstrap).
 
-7. Nice. And how to use them?
+8. Nice. And how to use them?
 -----------------------------
 
 Take a look at our live demos. There we have clear examples about using each of our features.

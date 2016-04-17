@@ -1,0 +1,14 @@
+{
+  "dependencies": {},
+  "homepage": "https://github.com/lorenooliveira/ng-text-truncate#readme",
+  "license": "MIT",
+  "main": "ng-text-truncate.js",
+  "maintainers": [
+  ],
+  "name": "ng-text-truncate",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lorenooliveira/ng-text-truncate.git"
+  },
+  "version": "1.0.0"
+}
