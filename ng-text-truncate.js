@@ -14,7 +14,8 @@
                 charsThreshould: "@ngTtCharsThreshold",
                 wordsThreshould: "@ngTtWordsThreshold",
                 customMoreLabel: "@ngTtMoreLabel",
-                customLessLabel: "@ngTtLessLabel"
+                customLessLabel: "@ngTtLessLabel",
+                customEllipsisLabel:"@ngTtEllipsisLabel"
             },
             controller: function( $scope, $element, $attrs ) {
                 $scope.toggleShow = function() {
@@ -28,6 +29,8 @@
 
                 ValidationServices.failIfWrongThreshouldConfig( $scope.charsThreshould, $scope.wordsThreshould );
 
+                $scope.customEllipsisLabel = $scope.customEllipsisLabel ? $scope.customEllipsisLabel : "...";
+                
                 var CHARS_THRESHOLD = parseInt( $scope.charsThreshould );
                 var WORDS_THRESHOLD = parseInt( $scope.wordsThreshould );
 
@@ -99,7 +102,7 @@
                     $element.append( el );
 
                 } else {
-                    $element.append( $scope.text.substr( 0, threshould ) + "..." );
+                    $element.append( $scope.text.substr( 0, threshould ) + $scope.customEllipsisLabel );
 
                 }
             }
@@ -137,7 +140,7 @@
                     $element.append( el );
 
                 } else {
-                    $element.append( splitText.slice( 0, threshould ).join( " " ) + "..." );
+                    $element.append( splitText.slice( 0, threshould ).join( " " ) + $scope.customEllipsisLabel );
                 }
             }
         };
