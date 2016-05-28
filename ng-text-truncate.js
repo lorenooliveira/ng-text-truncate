@@ -14,7 +14,8 @@
                 charsThreshould: "@ngTtCharsThreshold",
                 wordsThreshould: "@ngTtWordsThreshold",
                 customMoreLabel: "@ngTtMoreLabel",
-                customLessLabel: "@ngTtLessLabel"
+                customLessLabel: "@ngTtLessLabel",
+                customEllipsisLabel:"@ngTtEllipsisLabel"
             },
             controller: function( $scope, $element, $attrs ) {
                 $scope.toggleShow = function() {
@@ -28,6 +29,8 @@
 
                 ValidationServices.failIfWrongThreshouldConfig( $scope.charsThreshould, $scope.wordsThreshould );
 
+                $scope.customEllipsisLabel = $scope.customEllipsisLabel ? $scope.customEllipsisLabel : "...";
+                
                 var CHARS_THRESHOLD = parseInt( $scope.charsThreshould );
                 var WORDS_THRESHOLD = parseInt( $scope.wordsThreshould );
 
@@ -81,7 +84,7 @@
                 if( $scope.useToggling ) {
                     var el = angular.element(    "<span>" + 
                                                     $scope.text.substr( 0, threshould ) + 
-                                                    "<span ng-show='!open'>...</span>" +
+                                                    "<span ng-show='!open'>" + $scope.customEllipsisLabel + "</span>" +
                                                     "<span class='btn-link ngTruncateToggleText' " +
                                                         "ng-click='toggleShow()'" +
                                                         "ng-show='!open'>" +
@@ -99,7 +102,7 @@
                     $element.append( el );
 
                 } else {
-                    $element.append( $scope.text.substr( 0, threshould ) + "..." );
+                    $element.append( $scope.text.substr( 0, threshould ) + $scope.customEllipsisLabel );
 
                 }
             }
@@ -119,7 +122,7 @@
                 if( $scope.useToggling ) {
                     var el = angular.element(    "<span>" + 
                                                     splitText.slice( 0, threshould ).join( " " ) + " " + 
-                                                    "<span ng-show='!open'>...</span>" +
+                                                    "<span ng-show='!open'>" + $scope.customEllipsisLabel + "</span>" +
                                                     "<span class='btn-link ngTruncateToggleText' " +
                                                         "ng-click='toggleShow()'" +
                                                         "ng-show='!open'>" +
@@ -137,7 +140,7 @@
                     $element.append( el );
 
                 } else {
-                    $element.append( splitText.slice( 0, threshould ).join( " " ) + "..." );
+                    $element.append( splitText.slice( 0, threshould ).join( " " ) + $scope.customEllipsisLabel );
                 }
             }
         };
