@@ -57,6 +57,26 @@
             </p>
             
             <p>
+                <h3>custom ellipsis truncation</h3>
+                
+                <p>Similarly the last example, use the <code>ng-text-truncate</code> directive along with the <code>ng-tt-words-threshould</code> attribute for truncating your text based on the number of words in the string.</p>
+                <p>So, this block...</p>
+<pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
+   ng-tt-words-threshold="15"
+   ng-tt-custom-ellipsis-label="... ..." &gt;&lt;/p&gt;</pre>
+            
+                <p>...produces this:</p>
+                
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p ng-text-truncate="longText"
+                           ng-tt-words-threshold="15"
+                           ng-tt-custom-ellipsis-label="... ..."></p>
+                    </div>
+                </div>
+            </p>
+            
+            <p>
                 <h3>Custom toggling elements</h3>
                 
                 <p>You can set your own labels for the toggling elements using the <code>ng-tt-more-label</code> and <code>ng-tt-less-label</code> attributes.</p>
