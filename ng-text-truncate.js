@@ -84,7 +84,7 @@
                 if( $scope.useToggling ) {
                     var el = angular.element(    "<span>" + 
                                                     $scope.text.substr( 0, threshould ) + 
-                                                    "<span ng-show='!open'>...</span>" +
+                                                    "<span ng-show='!open'>" + $scope.customEllipsisLabel + "</span>" +
                                                     "<span class='btn-link ngTruncateToggleText' " +
                                                         "ng-click='toggleShow()'" +
                                                         "ng-show='!open'>" +
