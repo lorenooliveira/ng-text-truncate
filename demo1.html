@@ -92,6 +92,43 @@
                     </div>
                 </div>
             </p>
+
+            <p>
+                <h3>Text truncation and toggling by clicking over the text without label</h3>
+                
+                <p>You can also truncate the text and toggling by cliking over text by addind the attribute <code>ng-tt-toggling-over-text</code>.</p>
+
+<pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
+   ng-tt-chars-threshold="20"
+   ng-tt-toggling-over-text&gt;&lt;/p&gt;</pre>
+            
+                <p>The previous statement produces this:</p>
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p ng-text-truncate="longText"
+                           ng-tt-chars-threshold="20"
+                           ng-tt-toggling-over-text>
+                       </p>
+                    </div>
+                </div>
+
+                <pre class="prettyprint language-html linenums">&lt;p ng-text-truncate="longText"
+   ng-tt-words-threshold="20"
+   ng-tt-toggling-over-text&gt;&lt;/p&gt;</pre>
+            
+                <p>The previous statement produces this:</p>
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p ng-text-truncate="longText"
+                           ng-tt-words-threshold="20"
+                           ng-tt-toggling-over-text>
+                       </p>
+                    </div>
+                </div>
+
+            </p>
         </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
