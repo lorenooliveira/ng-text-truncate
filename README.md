@@ -60,6 +60,7 @@ By using this directive you can:
 * Truncate your text based on the number of chars to be displayed;
 * Truncate your text based on the number of words to be displayed;
 * Toggle the hidden part of truncated text visible or not;
+* Toggle the hidden part of truncated text visible or not by clicking over any part of the text.
 * Customize the text of the toggling elements (the defaults are "More" and "Less");
 * If you want/need, you can just truncate the text (i.e., ommit the toggling elements);
 * Take a ride in Bootstrap's styles for the toggling elements;
